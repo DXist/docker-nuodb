@@ -50,7 +50,7 @@
 # A flag specifying whether this agent should be run as a connection broker
 broker = ${BROKER}
 
-# The name used to identify the domain that this agent is a part of 
+# The name used to identify the domain that this agent is a part of
 domain = ${DOMAIN_USER}
 
 # The default administrative password, and the secret used by agents to
@@ -63,7 +63,7 @@ port = 48004
 # An existing peer (agent or broker) already running in the domain that this
 # agent should connect to on startup to extend the running domain.
 # 2.0.3 or later support a comma-separated list of peers
-#peer = 
+peer = ${PEER}
 
 # An alternate address to use in identifying this host, which is not actually
 # advertised unless the advertiseAlt property is set.
@@ -76,9 +76,9 @@ advertiseAlt = true
 
 # The region for this host. The region of a host should not be changed after it
 # has been set.
-#region = 
-    
-# The log level for the agent log output. Valid levels are, from most to least 
+#region =
+
+# The log level for the agent log output. Valid levels are, from most to least
 # verbose: ALL, FINEST, FINER, FINE, CONFIG, INFO, WARNING, SEVERE, OFF
 log = ${LOG_LEVEL}
 
@@ -90,7 +90,7 @@ log = ${LOG_LEVEL}
 # of the form start[,end].  Note: Specifying a start without an end indicates
 # that process TCP/IP ports are assigned incrementally from the start without
 # limit
-# 
+#
 # Each new process (transaction engine or storage manager) that is started on a
 # machine is communicated with via an assigned TCP/IP port that is specified
 # via this property.  Ensure firewall rules allow access from other machines.
@@ -178,7 +178,7 @@ singleHostDbRestart = true
 # Well-defined host tags that are injected by default such as "osversion", "region"
 # can not be overwritten and will be ignored. The format is a comma-separated list
 # of key=value pairs, with each string token being trimmed.
-# Example: hostTags = tag1 = val, tag2=v2  
+# Example: hostTags = tag1 = val, tag2=v2
 #hostTags =
 
 # ADDED in 2.1 #
