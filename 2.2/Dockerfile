@@ -23,6 +23,9 @@ RUN chown nuodb:nuodb /opt/nuodb/data
 # Add files
 ADD run.sh /run.sh
 RUN chmod +x /run.sh
+ADD start_db.sh /start_db.sh
+RUN chmod +x /start_db.sh
+
 ADD default.properties.tpl /opt/nuodb/etc/default.properties.tpl
 ADD supervisord.conf.tpl /etc/supervisor/conf.d/supervisord.conf.tpl
 
@@ -42,6 +45,7 @@ ENV DATABASE_NAME testdb
 ENV AUTOMATION false
 ENV AUTOMATION_BOOTSTRAP false
 
+ENV SUPERVISOR_LOG_LEVEL INFO
 ENV LOG_LEVEL INFO
 
 ENV NUOAGENT true
